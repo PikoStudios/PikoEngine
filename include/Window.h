@@ -5,6 +5,7 @@
 #include "util.h"
 #include "Sprite.h"
 
+#define knINIT_VIDEO 0x00000020u
 
 struct WinObject
 {
@@ -13,7 +14,7 @@ struct WinObject
 };
 
 
-WinObject InitWindow(const char* p_title, int m_width, int m_height)
+WinObject InitWindow(const char* p_title, int m_width, int m_height, Uint32 flags)
 {
 
     if (SDL_Init(SDL_INIT_VIDEO) > 0) ErrorMsg("Failed to run SDL_Init Error %s", SDL_GetError());
