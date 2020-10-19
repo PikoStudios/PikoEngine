@@ -50,19 +50,6 @@ void ClearScreen(SDL_Renderer* renderer)
     SDL_RenderClear(renderer);
 }
 
-void RenderSprite(SDL_Renderer* renderer, SDL_Texture* p_texture, SpriteObj sprite)
-{
-    SDL_Rect m_Rect, dst;
-    m_Rect.x = sprite.vector.x;
-    m_Rect.y = sprite.vector.y;
-    m_Rect.w = sprite.width;
-    m_Rect.h = sprite.height;
-
-    dst = m_Rect;
-
-    SDL_RenderCopy(renderer, p_texture, &m_Rect, &dst);
-}
-
 void UpdateDisplay(SDL_Renderer* renderer)
 {
     SDL_RenderPresent(renderer);
