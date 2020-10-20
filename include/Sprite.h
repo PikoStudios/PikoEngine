@@ -31,3 +31,13 @@ void RenderSprite(SDL_Renderer* renderer, SDL_Texture* p_texture, SpriteObj spri
 
     SDL_RenderCopy(renderer, p_texture, &m_Rect, &dst);
 }
+
+SDL_Texture* LoadSprite(const char* p_filePath, SDL_Renderer* renderer)
+{
+    SDL_Texture* texture = NULL;
+    texture = IMG_LoadTexture(renderer, p_filePath);
+    
+    if (texture == NULL) ErrorMsg("Failed to load %s, Error: %s", p_filePath, SDL_GetError());
+    return texture;
+
+}

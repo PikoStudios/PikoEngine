@@ -30,15 +30,7 @@ WinObject InitWindow(const char* p_title, int m_width, int m_height, Uint32 flag
     
 }
 
-SDL_Texture* LoadSprite(const char* p_filePath, SDL_Renderer* renderer)
-{
-    SDL_Texture* texture = NULL;
-    texture = IMG_LoadTexture(renderer, p_filePath);
-    
-    if (texture == NULL) ErrorMsg("Failed to load %s, Error: %s", p_filePath, SDL_GetError());
-    return texture;
 
-}
 
 void kn_DestoryWindow(WinObject win)
 {
