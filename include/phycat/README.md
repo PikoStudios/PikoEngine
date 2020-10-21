@@ -1,3 +1,3 @@
 # Phycat
 
-Phycat :: The offical Knightmare Physics Engine
+Phycat :: The offical Piko Physics Engine

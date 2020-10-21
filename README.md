@@ -1,8 +1,8 @@
-# knightmare-engine
+# Piko Engine
 A game engine using SDL2
 ## Getting Started
 
-Just put it in a include folder and do `include <knightmare-engine/knightmare.h>` or `include "knightmare-engine/knightmare.h"`
+Just put it in a include folder and do `include <piko-engine/Piko.h>` or `include "piko-engine/Piko.h"`
 
 No Compiling Needed :D
 

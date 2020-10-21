@@ -1,7 +1,7 @@
 #pragma once
 #include <SDL2/SDL.h>
 
-const char *kn_GetError()
+const char *pk_GetError()
 {
     return SDL_GetError();
 }
