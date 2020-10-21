@@ -14,9 +14,3 @@ void UpdateGame(EngineEvent event)
     while(event.running) OnGameUpdate();
 }
 
-bool OnGameUpdate(EngineEvent event)
-{
-    if (EnginePollEvent(event)) return true;
-    return false;
-}
-
