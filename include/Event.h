@@ -4,6 +4,7 @@
 typedef struct
 {
     SDL_Event ___event;
+    bool running;
 } EngineEvent;
 
 
