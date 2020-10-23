@@ -16,7 +16,11 @@
 
 int pkOpenAudio(int frequency, Uint16 format, int channels, int chunksize)
 {
-    if(Mix_OpenAudio(frequency, format, channels, chunksize) > 0) ErrorMsg("Error %s", SDL_GetError());
+    if(Mix_OpenAudio(frequency, format, channels, chunksize) > 0) 
+    {
+        fprintf(stderr, "Error %s", SDL_GetError());
+        exit(1);
+    }
 }
 
 extern DECLSPEC Mix_Music * SDLCALL pkLoadMusic(const char* p_filePath)
@@ -25,4 +29,3 @@ extern DECLSPEC Mix_Music * SDLCALL pkLoadMusic(const char* p_filePath)
 }
 
 void pkCloseAudioModule() { Mix_Quit(); }
-

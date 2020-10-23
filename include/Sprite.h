@@ -2,6 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "Vector.h"
+#include "util.h"
 
 typedef struct
 {
@@ -37,7 +38,11 @@ SDL_Texture* LoadSprite(const char* p_filePath, SDL_Renderer* renderer)
     SDL_Texture* texture = NULL;
     texture = IMG_LoadTexture(renderer, p_filePath);
     
-    if (texture == NULL) ErrorMsg("Failed to load %s, Error: %s", p_filePath, SDL_GetError());
+    if (texture == NULL) 
+    {
+        fprintf(stderr, "Failed to load %s, Error: %s", p_filePath, SDL_GetError());
+        exit(1);
+    }
     return texture;
 
 }

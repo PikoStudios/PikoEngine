@@ -1,16 +1,26 @@
 #pragma once
 #include "Event.h"
-void OnGameStart();
-void OnGameUpdate();
+#include "Window.h"
+Game OnGameStart();
+void OnGameUpdate(Game app);
 
-void StartGame(EngineEvent event)
+Game StartGame(EngineEvent event)
 {
     event.running = true;
-    OnGameStart();
+    return OnGameStart();
 }
 
-void UpdateGame(EngineEvent event)
+void UpdateGame(EngineEvent event, Game appObj)
 {
-    while(event.running) OnGameUpdate();
+    while(event.running) 
+    {
+        while (SDL_PollEvent(&event.___event))
+        {
+            if (event.___event.type == SDL_QUIT) event.running = false;
+        }
+        OnGameUpdate(appObj);
+        
+    }
+    SDL_DestroyWindow(appObj.win);
+    SDL_Quit();
 }
-
