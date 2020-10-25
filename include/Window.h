@@ -5,8 +5,8 @@
 #include "util.h"
 #include "Sprite.h"
 
-#define pkINIT_VIDEO 0x00000020u
-// Kill Piko Engine and SDL
+
+// Kill Piko Engine Early
 #define pkQuit() SDL_Quit()
 
 typedef struct
@@ -18,7 +18,6 @@ typedef struct
 
 Game InitWindow(const char* p_title, int m_width, int m_height, Uint32 flags)
 {
-
     if (SDL_Init(SDL_INIT_VIDEO) > 0) 
     {
         fprintf(stderr, "Failed to run SDL_Init Error %s", SDL_GetError());
