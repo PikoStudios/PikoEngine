@@ -1,5 +1,7 @@
-#include "piko-game-engine-location"
+#include "PikoEngine/include/Piko.h"
 #include <stdio.h>
+
+// my game engine
 
 Game OnGameStart()
 {
@@ -17,6 +19,5 @@ int main(int argc, char** argv)
     EngineEvent event = pkEngineEvent();
     Game obj = StartGame(event);
     UpdateGame(event, obj);
-
     return 0;
 }
