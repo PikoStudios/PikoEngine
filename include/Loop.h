@@ -14,10 +14,9 @@ void UpdateGame(EngineEvent event, Game appObj)
 {
     while(event.running) 
     {
-        while (SDL_PollEvent(&event.___event))
-        {
-            if (event.___event.type == SDL_QUIT) event.running = false;
-        }
+
+        SDL_WaitEvent(&event.___event);
+        if (event.___event.type == SDL_QUIT) event.running = false;
         OnGameUpdate(appObj);
         
     }
