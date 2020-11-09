@@ -33,7 +33,7 @@ AnimationHandle LoadAnimation(char* __title, float __m_fps, char** __arrayOfFile
     return handle;
 }
 
-void PlayAnimation(AnimationHandle handle, SDL_Renderer* renderer)
+void PlayAnimation(AnimationHandle handle, SDL_Renderer* renderer) // TODO: Finish this
 {
     for (int i = 0; i <= LengthOfArraySDL_Texture(handle.p_AnimationArray); i++)
     {

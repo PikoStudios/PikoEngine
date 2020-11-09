@@ -268,7 +268,7 @@ typedef enum
 
 KeyPressed GetKeyPressed(EngineEvent event)
 {
-    switch (event.___event.type)
+    switch (event.___event.type) // TODO: find a better way to do this
     {
     case SDL_KEYDOWN:
         switch (event.___event.key.keysym.sym)
@@ -448,8 +448,58 @@ KeyPressed GetKeyPressed(EngineEvent event)
         case SDLK_PRIOR: return PRIOR; break;
         case SDLK_RETURN2: return RETURN2; break;
         case SDLK_SEPARATOR: return SEPARATOR; break;
+        case SDLK_OUT: return OUT; break;
+        case SDLK_OPER: return OPER; break;
+        case SDLK_CLEARAGAIN: return CLEARAGAIN; break;
+        case SDLK_CRSEL: return CRSEL; break;
+        case SDLK_EXSEL: return EXSEL; break;
+        case SDLK_KP_00: return KP_00; break;
+        case SDLK_KP_000: return KP_000; break;
+        case SDLK_DECIMALSEPARATOR: return DECIMALSEPARATOR; break;
+        case SDLK_CURRENCYUNIT: return CURRENCYUNIT; break;
+        case SDLK_CURRENCYSUBUNIT: return CURRENCYUNIT; break;
+        case SDLK_KP_LEFTBRACE: return KP_LEFTBRACE; break;
+        case SDLK_KP_RIGHTBRACE: return KP_RIGHTBRACE; break;
+        case SDLK_KP_LEFTPAREN: return KP_LEFTPAREN; break;
+        case SDLK_KP_RIGHTPAREN: return KP_RIGHTPAREN; break;
+        case SDLK_KP_TAB: return KP_TAB; break;
+        case SDLK_KP_BACKSPACE: return KP_BACKSPACE; break;
+        case SDLK_KP_A: return KP_A; break;
+        case SDLK_KP_B: return KP_B; break;
+        case SDLK_KP_C: return KP_C; break;
+        case SDLK_KP_D: return KP_D; break;
+        case SDLK_KP_E: return KP_E; break;
+        case SDLK_KP_F: return KP_F; break;
+        case SDLK_KP_XOR: return KP_XOR; break;
+        case SDLK_KP_POWER: return KP_POWER; break;
+        case SDLK_KP_PERCENT: return KP_PERCENT; break;
+        case SDLK_KP_LESS: return KP_LESS; break;
+        case SDLK_KP_GREATER: return KP_GREATER; break;
+        case SDLK_KP_AMPERSAND: return KP_AMPERSAND; break;
+        case SDLK_KP_DBLAMPERSAND: return KP_DBLAMPERSAND; break;
+        case SDLK_KP_VERTICALBAR: return KP_VERTICALBAR; break;
+        case SDLK_KP_DBLVERTICALBAR: return KP_DBLVERTICALBAR; break;
+        case SDLK_KP_COLON: return KP_COLON; break;
+        case SDLK_KP_HASH: return ; break;
+        case SDLK_KP_SPACE: return ; break;
+        case SDLK_KP_AT: return ; break;
+        case SDLK_KP_EXCLAM: return ; break;
+        case SDLK_KP_MEMSTORE: return ; break;
+        case SDLK_KP_MEMRECALL: return ; break;
+        case SDLK_KP_MEMCLEAR: return ; break;
+        case SDLK_KP_MEMADD: return ; break;
+        case SDLK_KP_MEMSUBTRACT: return ; break;
+        case SDLK_KP_MEMMULTIPLY: return ; break;
+        case SDLK_KP_MEMDIVIDE: return ; break;
+        case SDLK_KP_PLUSMINUS: return ; break;
+        case SDLK_KP_CLEAR: return ; break;
+        case SDLK_KP_CLEARENTRY: return ; break;
+        case SDLK_KP_BINARY: return ; break;
+        case SDLK_KP_OCTAL: return ; break;
+        case SDLK_KP_DECIMAL: return ; break;
+        case SDLK_KP_HEXADECIMAL: return ; break;
+	case SDLK_LCTRL: return ; break;
         
-        // will finish later
 
 
         default:

@@ -18,7 +18,7 @@ typedef struct
 
 Game InitWindow(const char* p_title, int m_width, int m_height, Uint32 flags)
 {
-    if (SDL_Init(SDL_INIT_VIDEO) > 0) 
+    if (SDL_Init(flags) > 0) 
     {
         fprintf(stderr, "Failed to run SDL_Init Error %s", SDL_GetError());
         exit(1);
