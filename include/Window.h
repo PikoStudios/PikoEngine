@@ -1,10 +1,10 @@
 #pragma once
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+#include <SDL.h>
+#include <SDL_image.h>
 #include "Vector.h"
-#include "util.h"
-#include "Sprite.h"
 
+#include "Sprite.h"
+#include <switch.h>
 
 // Kill Piko Engine Early
 #define pkQuit() SDL_Quit()
@@ -16,8 +16,11 @@ typedef struct
 } Game;
 
 
-Game InitWindow(const char* p_title, int m_width, int m_height, Uint32 flags)
+Game InitWindow(int m_width, int m_height, Uint32 flags)
 {
+
+    consoleInit(NULL);
+
     if (SDL_Init(flags) > 0) 
     {
         fprintf(stderr, "Failed to run SDL_Init Error %s", SDL_GetError());
@@ -30,7 +33,7 @@ Game InitWindow(const char* p_title, int m_width, int m_height, Uint32 flags)
     }
 
     Game obj;
-    obj.win = SDL_CreateWindow(p_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, m_width, m_height, SDL_WINDOW_SHOWN);
+    obj.win = SDL_CreateWindow(".", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, m_width, m_height, SDL_WINDOW_SHOWN);
 
     if (obj.win == NULL) printf("Failed to Create Window: %s", SDL_GetError());
     obj.renderer = SDL_CreateRenderer(obj.win, -1, SDL_RENDERER_ACCELERATED);

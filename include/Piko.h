@@ -5,7 +5,7 @@
 #include "Error.h"
 #include "Event.h"
 #include "Loop.h"
-#include "Input.h"
+#include <switch.h>
 
 #define pkINIT_VIDEO 0x00000020u
 // Right now no Piko Module Exists for Timer

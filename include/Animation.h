@@ -2,7 +2,7 @@
 
 #pragma once
 #include "Sprite.h"
-#include "util.h"
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 

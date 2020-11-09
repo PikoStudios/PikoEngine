@@ -1,9 +1,9 @@
 // Piko Audio Module
 
 #pragma once
-#include <SDL2/SDL.h>
-#include <SDL2/sdl_mixer.h>
-#include "util.h"
+#include <SDL.h>
+#include <sdl_mixer.h>
+
 #define pkINIT_AUDIO 0x00000010u
 #define pkAudioDefaultFormat AUDIO_S16LSB
 #define pkAudioDefaultFrequency 44100
