@@ -18,6 +18,7 @@ void UpdateGame(EngineEvent event, Game appObj)
         SDL_WaitEvent(&event.___event);
         if (event.___event.type == SDL_QUIT) event.running = false;
         OnGameUpdate(appObj);
+        SDL_RenderPresent(appObj.renderer);
         
     }
     SDL_DestroyWindow(appObj.win);
