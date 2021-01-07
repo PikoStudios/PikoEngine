@@ -15,12 +15,12 @@ void UpdateGame(EngineEvent event, Game appObj)
     while(event.running) 
     {
 
+        SDL_GL_SwapWindow(appObj.window);
         SDL_WaitEvent(&event.___event);
         if (event.___event.type == SDL_QUIT) event.running = false;
         OnGameUpdate(appObj);
-        SDL_RenderPresent(appObj.renderer);
         
     }
-    SDL_DestroyWindow(appObj.win);
+    SDL_DestroyWindow(appObj.window);
     SDL_Quit();
 }
