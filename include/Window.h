@@ -5,9 +5,6 @@
 #include "util.h"
 
 
-
-
-
 // Kill Piko Engine Early
 #define pkQuit() SDL_Quit()
 
@@ -31,7 +28,7 @@ Game InitPiko(const char* p_title, int m_width, int m_height)
     // Request an OpenGL 4.5 context (should be core)
     SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 5);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
     // Also request a depth buffer
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
@@ -68,17 +65,25 @@ Game InitPiko(const char* p_title, int m_width, int m_height)
 
     printf("OpenGL loaded\n");
     gladLoadGLLoader(SDL_GL_GetProcAddress);
-    printf("Vendor:   %s\n", glGetString(GL_VENDOR));
-    printf("Renderer: %s\n", glGetString(GL_RENDERER));
-    printf("Version:  %s\n", glGetString(GL_VERSION));
+    printf("Vendor:      %s\n", glGetString(GL_VENDOR));
+    printf("Renderer:    %s\n", glGetString(GL_RENDERER));
+    printf("Version:     %s\n", glGetString(GL_VERSION));
+#ifdef PIKO_FULLSCREEN_ENABLED
+    printf("Resolution:  Fullscreen\n");
+#else
+    printf("Resolution:  %ix%i\n",m_width, m_height);
+#endif
+    
 
     // Set V-Sync
 #ifdef PIKO_VSYNC_ENABLED
     // Using V-Sync
     SDL_GL_SetSwapInterval(1);
+    printf("V-Sync:     Enabled\n");
 #else
     // Not Using V-Sync
     SDL_GL_SetSwapInterval(0);
+    printf("V-Sync:     Disabled\n");
 #endif
 
     // Disable depth test and face culling.
@@ -99,12 +104,10 @@ Game InitPiko(const char* p_title, int m_width, int m_height)
     
 }
 
-
-
-void pkDestroyWindow(Game win);
-void ClearScreen()
+void ClearScreen(float red, float green, float blue, float alpha)
 {
-    glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
+    glClearColor(red, green, blue, alpha);
+    glClear(GL_COLOR_BUFFER_BIT);
 }
 void UpdateDisplay(Game obj)
 {

@@ -5,6 +5,8 @@
 // #include "Error.h"
 #include "Event.h"
 #include "Loop.h"
+#include "Triangle.h"
+#include "Shader.h"
 // #include "Rectangle.h"
 // #include "Text.h"
 
