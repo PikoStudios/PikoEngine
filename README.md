@@ -1,4 +1,6 @@
-# THIS PROJECT HAS BEEN PUT ON HOLD!!
+This Project is no longer being worked on
+Check out:
+https://github.com/pikostudios/muzzle
 
 
 # Piko Engine
